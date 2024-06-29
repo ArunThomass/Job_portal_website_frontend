@@ -51,6 +51,7 @@ const Login = () => {
               <form>
                 <div className="gap-5">
                   <select
+                    id="role"
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
                     className="border py-1 px-2 w-full bg-indigo-50 rounded-lg"
@@ -62,6 +63,7 @@ const Login = () => {
                 </div>
                 <div className="mt-5">
                   <input
+                    id="email"
                     type="email"
                     placeholder="Email"
                     value={email}
@@ -71,6 +73,7 @@ const Login = () => {
                 </div>
                 <div className="mt-5">
                   <input
+                    id="password"
                     type="password"
                     placeholder="Password"
                     value={password}

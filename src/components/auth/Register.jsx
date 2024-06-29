@@ -55,6 +55,7 @@ const Register = () => {
             <form >
               <div className="gap-5">
                 <select
+                  id="role"
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
                   className="border py-1 px-2 w-full bg-indigo-50 rounded-lg"
@@ -66,6 +67,7 @@ const Register = () => {
               </div>
               <div className="mt-5">
                 <input
+                  id="name"
                   type="text"
                   placeholder="Name"
                   value={name}
@@ -75,6 +77,7 @@ const Register = () => {
               </div>
               <div className="mt-5">
                 <input
+                  id="phone"
                   type="number"
                   placeholder="Phone"
                   value={phone}
@@ -84,6 +87,7 @@ const Register = () => {
               </div>
               <div className="mt-5">
                 <input
+                  id="email"
                   type="email"
                   placeholder="Email"
                   value={email}
@@ -93,6 +97,7 @@ const Register = () => {
               </div>
               <div className="mt-5">
                 <input
+                  id="password"
                   type="password"
                   placeholder="Password"
                   value={password}
