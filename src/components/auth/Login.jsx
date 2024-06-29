@@ -48,7 +48,7 @@ const Login = () => {
               <p className="mb-4">
               Welcome to your professional community
               </p>
-              <form autoComplete="off">
+              <form onSubmit={handleLogin}>
                 <div className="gap-5">
                   <select
                     id="role"
@@ -85,8 +85,7 @@ const Login = () => {
                 </div>
                 <div className="mt-5">
                   <button
-                    type="submit"
-                    onClick={handleLogin}
+                    type="submit" 
                     className="w-full border rounded-lg  bg-blue-950 py-3 text-center text-white"
                   >
                     Login
