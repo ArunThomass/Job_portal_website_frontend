@@ -52,7 +52,7 @@ const Register = () => {
             <p className="mb-4">
               Create your account. It’s free and only takes a minute.
             </p>
-            <form onSubmit={handleRegister} >
+            <form autoComplete="off" onSubmit={handleRegister} >
               <div className="gap-5">
                 <select
                   id="role"
@@ -68,6 +68,7 @@ const Register = () => {
               <div className="mt-5">
                 <input
                   id="name"
+                  autoComplete="off"
                   type="text"
                   placeholder="Name"
                   value={name}
@@ -79,6 +80,7 @@ const Register = () => {
                 <input
                   id="phone"
                   type="number"
+                  autoComplete="off"
                   placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -89,6 +91,7 @@ const Register = () => {
                 <input
                   id="email"
                   type="email"
+                  autoComplete="off"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -99,6 +102,7 @@ const Register = () => {
                 <input
                   id="password"
                   type="password"
+                  autoComplete="off"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

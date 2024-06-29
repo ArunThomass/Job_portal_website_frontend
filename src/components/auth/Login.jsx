@@ -48,7 +48,7 @@ const Login = () => {
               <p className="mb-4">
               Welcome to your professional community
               </p>
-              <form>
+              <form autoComplete="off">
                 <div className="gap-5">
                   <select
                     id="role"
@@ -65,6 +65,7 @@ const Login = () => {
                   <input
                     id="email"
                     type="email"
+                    autoComplete="off"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -75,6 +76,7 @@ const Login = () => {
                   <input
                     id="password"
                     type="password"
+                    autoComplete="off"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
