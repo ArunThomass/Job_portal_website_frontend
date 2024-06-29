@@ -23,9 +23,12 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        const token = localStorage.getItem('jwtToken')
         const response = await axios.get(
           "/api/v1/user/getuser",
-          {
+          { headers: {
+            Authorization: `Bearer ${token}`,
+          },
             withCredentials: true,
           }
         );
