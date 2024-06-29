@@ -52,7 +52,7 @@ const Register = () => {
             <p className="mb-4">
               Create your account. It’s free and only takes a minute.
             </p>
-            <form >
+            <form onSubmit={handleRegister} >
               <div className="gap-5">
                 <select
                   id="role"
@@ -108,7 +108,6 @@ const Register = () => {
               <div className="mt-5">
                 <button
                   type="submit"
-                  onClick={handleRegister}
                   className="w-full border  bg-blue-950 py-3 text-center text-white rounded-lg"
                 >
                   Register Now
