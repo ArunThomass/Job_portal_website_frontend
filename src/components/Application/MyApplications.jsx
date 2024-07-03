@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ResumeModel from "./ResumeModel";
@@ -12,6 +12,7 @@ const MyApplications = () => {
   const [resumeImageUrl, setResumeImageUrl] = useState("");
 
   const { isAuthorized } = useContext(Context);
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     try {
@@ -38,7 +39,7 @@ const MyApplications = () => {
   }, [isAuthorized]);
 
   if (!isAuthorized) {
-    return <Navigate to={"/login"} />;
+    navigateTo("/");
   }
 
   const deleteApplication = (id) => {
@@ -91,9 +92,9 @@ const MyApplications = () => {
         <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
           <h1>Applications From Job Seekers</h1>
           {applications.length <= 0 ? (
-            
+            <>
               <h4>No Applications Found</h4>
-            
+            </>
           ) : (
             applications.map((element) => {
               return (

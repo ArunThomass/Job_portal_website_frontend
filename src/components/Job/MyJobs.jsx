@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
-import { Context } from '../../main';
+import { Context } from "../../main";
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
@@ -75,6 +75,7 @@ const MyJobs = () => {
       )
     );
   };
+
   return (
     <>
     <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
@@ -365,7 +366,7 @@ const MyJobs = () => {
       </div>
     </div>
   </>
-  )
-}
+  );
+};
 
-export default MyJobs
+export default MyJobs;

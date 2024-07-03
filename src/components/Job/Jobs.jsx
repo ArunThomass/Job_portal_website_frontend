@@ -1,13 +1,15 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FiBook, FiClock, FiDollarSign, FiMapPin } from 'react-icons/fi';
-import { Context } from '../../main';
+import { Context } from "../../main";
+import Banner from './Banner';
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const { isAuthorized } = useContext(Context);
   const navigateTo = useNavigate();
+  const [query, setQuery] = useState("");
   useEffect(() => {
     try {
       axios
@@ -22,14 +24,27 @@ const Jobs = () => {
     }
   }, []);
   if (!isAuthorized) {
-    navigateTo("/login");
+    navigateTo("/");
   }
+  
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+  
   return (
-    
+    <>
+
+    <Banner query={query} handleInputChange={handleInputChange} />
+
     <div className='  pt-10 pb-12 w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[4rem] gap-[3rem]
         items-center '>
       {jobs.jobs &&
-            jobs.jobs.map((element) => {
+            jobs.jobs.filter((element)=>{
+              return query.toLowerCase() === '' 
+              ? element
+              :element.title.toLowerCase().includes(query)
+            })
+            .map((element) => {
               return (
               
     <section className=' overflow-hidden bg-slate-100 p-4 border-2 cursor-pointer hover:scale-110 hover:shadow-sm transition-all duration-300 border-gray-500 rounded-lg border-opacity-10' key={element._id}>
@@ -54,6 +69,7 @@ const Jobs = () => {
     );
   })}
     </div>
+    </>
   )
 }
 

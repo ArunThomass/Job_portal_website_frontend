@@ -34,10 +34,10 @@ const Login = () => {
     }
   };
 
-  if (isAuthorized) {
-    return <Navigate to={"/"} />;
+  if(isAuthorized){
+    return <Navigate to={'/'}/>
   }
-
+  
   return (
     <>
       <section className="min-h-screen py-10">

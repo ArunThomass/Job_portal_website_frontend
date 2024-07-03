@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import './App.css'
-import { BrowserRouter , Route,  Routes } from 'react-router-dom';
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 import Jobs from './components/Job/Jobs';
@@ -22,13 +22,10 @@ const App = () => {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        const token = localStorage.getItem('jwtToken')
+      try {    
         const response = await axios.get(
           "/api/v1/user/getuser",
-          { headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          { 
             withCredentials: true,
           }
         );
@@ -40,7 +37,7 @@ const App = () => {
     };
     fetchUser();
   }, [isAuthorized]);
-
+  
   return (
     <>
       <BrowserRouter>
@@ -48,8 +45,8 @@ const App = () => {
         <Routes>
          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} /> 
           <Route path="/job/getall" element={<Jobs />} />
-          <Route path='/' element={<Home/>}/>  
           <Route path="/job/:id" element={<JobDetails />} />
           <Route path="/application/:id" element={<Application />} />
           <Route path="/applications/me" element={<MyApplications />} />
@@ -60,7 +57,6 @@ const App = () => {
         <Footer />
         <Toaster />
       </BrowserRouter>
-
     </>
   );
 };

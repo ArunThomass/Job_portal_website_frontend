@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
-import { Context } from '../../main';
-
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { Context } from "../../main";
 const JobDetails = () => {
   const { id } = useParams();
   const [job, setJob] = useState({});
@@ -26,6 +25,7 @@ const JobDetails = () => {
   if (!isAuthorized) {
     navigateTo("/login");
   }
+
   return (
     <div className='pt-10 pb-12 w-[80%] mx-auto  mt-[4rem] gap-[3rem]
     items-center '>
@@ -38,7 +38,7 @@ const JobDetails = () => {
             {job.location}
           </p>
           <p>
-            
+            Salary:{" "}
             {job.fixedSalary ? (
               <span>{job.fixedSalary}</span>
             ) : (
