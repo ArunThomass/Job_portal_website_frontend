@@ -72,7 +72,7 @@ const MyApplications = () => {
     <section className="my_applications page">
       {user && user.role === "Job Seeker" ? (
         <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-10 py-8">
-          <h1 className=" text-2xl text-center pb-5">My Applications</h1>
+          <h1 className=" text-3xl font-bold text-center text-primary mb-8 text-blue-950">My Applications</h1>
           {applications.length <= 0 ? (
               <h4>No Applications Found</h4>
           ) : (
@@ -90,7 +90,7 @@ const MyApplications = () => {
         </div>
       ) : (
         <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
-          <h1>Applications From Job Seekers</h1>
+          <h1 className='text-3xl font-bold text-center text-primary mb-8 text-blue-950'>Applications From Job Seekers</h1>
           {applications.length <= 0 ? (
             <>
               <h4>No Applications Found</h4>
@@ -165,6 +165,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
 const EmployerCard = ({ element, openModal }) => {
   return (
     <>
+      <div className="flex flex-col min-h-screen">
       <div className="overflow-hidden mt-5 bg-slate-100 p-4 border-2 border-gray-500 rounded-lg border-opacity-10">
         <div className="w-full lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 mt-5">
           <div className="flex justify-center items-center">
@@ -194,6 +195,7 @@ const EmployerCard = ({ element, openModal }) => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

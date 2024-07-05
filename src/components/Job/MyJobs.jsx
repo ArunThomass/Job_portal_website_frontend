@@ -79,14 +79,14 @@ const MyJobs = () => {
   return (
     <>
     <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-8">
-      <div className=" w-8/12 rounded-xl mx-auto shadow-lg overflow-hidden">
-        <h1 className=' text-center text-lg'>Your Posted Jobs</h1>
+      <div className=" w-8/12 rounded-xl mx-auto overflow-hidden">
+        <h1 className=' text-3xl font-bold text-primary mb-3 text-center text-blue-950'>Your Posted Jobs</h1>
 
         {myJobs.length > 0 ? (
           <>
-            <div className="banner">
+            <div className="shadow-lg">
               {myJobs.map((element) => (
-                <div className=" flex overflow-hidden mt-5 bg-slate-100 p-4 border-2 border-gray-500 rounded-lg border-opacity-10" key={element._id}>
+                <div className=" flex overflow-hidden shadow-lg mt-5 bg-slate-100 p-4 border-2 border-gray-500 rounded-lg border-opacity-10" key={element._id}>
                   <div className="w-5/6 px-10 ">
                     <div className=''>
                     <div>
