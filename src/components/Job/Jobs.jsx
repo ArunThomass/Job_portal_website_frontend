@@ -52,7 +52,7 @@ const Jobs = () => {
         <h4 className=' text-primary mb-1'>{element.companyName}</h4>
         <h3 className=' text-lg font-semibold mb-2'>{element.title}</h3>
 
-        <div className=' text-primary/70 text-base flex flex-wrap gap-2 mp-2'>
+        <div className=' text-primary/70 text-base  gap-2 mp-2'>
           <span className=' flex items-center gap-2'>< FiMapPin />{element.location}</span>
           <span className=' flex items-center gap-2'>< FiClock />{element.experienceLevel}</span>
           <span className=' flex items-center gap-2'>< FiDollarSign />{element.salaryFrom}-{element.salaryTo}</span>
